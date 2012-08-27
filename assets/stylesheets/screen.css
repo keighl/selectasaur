@@ -583,6 +583,7 @@ p {
   width: 400px;
   padding: 20px;
   margin: 0 auto;
+  background-color: #f7f7f7;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f7f7f7));
   background: -webkit-linear-gradient(top, #ffffff, #f7f7f7);
   background: -moz-linear-gradient(top, #ffffff, #f7f7f7);
@@ -600,7 +601,7 @@ p {
   border: 3px solid #ccc;
 }
 
-/* line 137, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .selectasaur-enabled {
   position: absolute;
   left: 0;
@@ -613,7 +614,7 @@ p {
   cursor: pointer;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .selectasaur-label {
   display: block;
   float: left;
@@ -631,7 +632,7 @@ p {
   background-repeat: no-repeat;
 }
 
-/* line 166, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .selectasaur-wrapper-active {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #f7f7f7));
   background: -webkit-linear-gradient(top, #f7f7f7, #f7f7f7);
@@ -640,12 +641,12 @@ p {
   background: linear-gradient(top, #f7f7f7, #f7f7f7);
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .selectasaur-wrapper-hover .selectasaur-label {
   color: #000;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 pre.prettyprint {
   background-color: #232323;
   -webkit-border-radius: 8px;
@@ -656,7 +657,7 @@ pre.prettyprint {
   border: 1px #666 solid;
   margin-left: 0px;
 }
-/* line 185, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 pre.prettyprint:last-child {
   margin-bottom: 40px;
 }

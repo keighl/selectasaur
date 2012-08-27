@@ -1,0 +1,121 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>selectasaur</title>
+  <link href="assets/stylesheets/prettify.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="assets/js/prettify.js"></script>
+</head>
+<body>
+<a href="http://github.com/keighl/selectasaur"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://keighl.com/assets/media/fork_me.png" alt="Fork me on GitHub"></a>
+  <div class="container">
+    <h1>Selectasaur</h1>
+    <p class="desc">Selectasaur lets you have customized <code>select</code> targets.</p>
+    <p class="download">
+      <a class="download" href="https://github.com/keighl/selectasaur/zipball/master">Download</a>
+      &nbsp;
+      <a class="info" href="https://github.com/keighl/selectasaur">GitHub</a>
+    </p>
+  </div>
+  <div class="demo_wrapper">
+    <div class="demo container">
+      <select class="selectasaur">
+        <option>Select a dinosaur...</option>
+        <option>Breviceratops</option>
+        <option>Charonosaurus</option>
+        <option>Liaoceratops</option>
+        <option>Mapusaurus</option>
+      </select>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Javascript</h2>
+    <pre class="prettyprint lang-js">
+$('.selectasaur').selectasaur({
+  enabled_class        : "selectasaur-enabled",
+  wrapper_class        : "selectasaur-wrapper",
+  wrapper_active_class : "selectasaur-wrapper-active",
+  wrapper_focus_class  : "selectasaur-wrapper-focus",
+  wrapper_hover_class  : "selectasaur-wrapper-hover",
+  label_class          : "selectasaur-label"
+});
+    </pre>
+    <h2>HTML</h2>
+    <pre class="prettyprint">
+&lt;select class=&quot;selectasaur&quot;&gt;
+  &lt;option&gt;Select a dinosaur...&lt;/option&gt;
+  &lt;option&gt;Breviceratops&lt;/option&gt;
+  &lt;option&gt;Charonosaurus&lt;/option&gt;
+  &lt;option&gt;Liaoceratops&lt;/option&gt;
+  &lt;option&gt;Mapusaurus&lt;/option&gt;
+&lt;/select&gt;
+    </pre>
+    <h2>CSS</h2>
+    <pre class="prettyprint lang-css">
+.selectasaur-enabled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  height: 25px; /* adjust manually for best hit state */
+  border: none;
+  background: none;
+  width:100%;
+  cursor:pointer;
+}
+
+.selectasaur-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.selectasaur-label {
+  display: block;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selectasaur-wrapper-active {}
+
+.selectasaur-wrapper-hover {}
+
+.selectasaur-wrapper-focus {}
+    </pre>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='assets/jquery.js'>\x3C/script>")</script>
+  <script src="assets/js/jquery.easing.js"></script>
+  <script src="jquery.selectasaur.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      $('.selectasaur').selectasaur({
+
+      });
+    });
+
+    prettyPrint();
+
+  </script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26192463-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

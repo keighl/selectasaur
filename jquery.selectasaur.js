@@ -10,7 +10,7 @@
  *   http://www.gnu.org/licenses/gpl.html
  */
 
-(function ($) {
+;(function ($) {
 
   // ----------------------------------
 
@@ -22,15 +22,26 @@
 
       return $(this).each(function () {
 
-        var $this  = $(this),
-        settings   = {
-          enabled_class        : "selectasaur-enabled",
-          wrapper_class        : "selectasaur-wrapper",
-          wrapper_active_class : "selectasaur-wrapper-active",
-          wrapper_focus_class  : "selectasaur-wrapper-focus",
-          wrapper_hover_class  : "selectasaur-wrapper-hover",
-          label_class          : "selectasaur-label"
-        };
+        var $this    = $(this),
+            selected = $this.find(":selected:first"),
+            settings = {
+              enabled_class        : "selectasaur-enabled",
+              wrapper_class        : "selectasaur-wrapper",
+              wrapper_active_class : "selectasaur-wrapper-active",
+              wrapper_focus_class  : "selectasaur-wrapper-focus",
+              wrapper_hover_class  : "selectasaur-wrapper-hover",
+              label_class          : "selectasaur-label",
+              change               : methods.callbacks.change,
+              focus                : methods.callbacks.focus,
+              blur                 : methods.callbacks.blur,
+              mousedown            : methods.callbacks.mousedown,
+              mouseup              : methods.callbacks.mouseup,
+              mouseenter           : methods.callbacks.mouseenter,
+              mouseleave           : methods.callbacks.mouseleave,
+              keyup                : methods.callbacks.keyup
+            },
+            wrapper  = $('<div />').addClass(settings.wrapper_class),
+            label    = $('<span />').addClass(settings.label_class);
 
         if (options) {
           $.extend(settings, options);
@@ -44,16 +55,13 @@
 
         $this.addClass(settings.enabled_class);
 
-        var wrapper  = $('<div />').addClass(settings.wrapper_class),
-            label    = $('<span />').addClass(settings.label_class),
-            selected = $this.find(":selected:first");
-
-        if (selected.length == 0) {
+        if (selected.length === 0) {
           selected = $this.find("option:first");
         }
 
         label.html(selected.html());
 
+        $this.css("opacity", 0);
         $this.wrap(wrapper);
         $this.before(label);
 
@@ -66,31 +74,40 @@
             wrapper.removeClass(settings.wrapper_focus_class);
             wrapper.removeClass(settings.wrapper_hover_class);
             wrapper.removeClass(settings.wrapper_active_class);
+            settings.change.call($this);
           },
           "focus.selectasaur": function() {
             wrapper.addClass(settings.wrapper_focus_class);
+            settings.focus.call($this);
           },
           "blur.selectasaur": function() {
             wrapper.removeClass(settings.wrapper_focus_class);
             wrapper.removeClass(settings.wrapper_active_class);
+            settings.blur.call($this);
           },
           "mousedown.selectasaur touchbegin.selectasaur": function() {
             wrapper.addClass(settings.wrapper_active_class);
+            settings.mousedown.call($this);
           },
           "mouseup.selectasaur touchend.selectasaur": function() {
             wrapper.removeClass(settings.wrapper_active_class);
+            settings.mouseup.call($this);
           },
           "click.selectasaur touchend.selectasaur": function(){
             wrapper.removeClass(settings.wrapper_active_class);
+            settings.click.call($this);
           },
           "mouseenter.selectasaur": function() {
             wrapper.addClass(settings.wrapper_hover_class);
+            settings.mouseenter.call($this);
           },
           "mouseleave.selectasaur": function() {
             wrapper.removeClass(settings.wrapper_hover_class);
+            settings.mouseleave.call($this);
           },
           "keyup.selectasaur": function() {
             label.text($this.find(":selected").html());
+            settings.keyup.call($this);
           }
         });
 
@@ -104,10 +121,9 @@
 
       return $(this).each(function () {
 
-        var $this   = $(this),
-            wrapper = $this.parent("div");
-
-        var settings = $this.data("selectasaur");
+        var $this    = $(this),
+            wrapper  = $this.parent("div"),
+            settings = $this.data("selectasaur");
 
         if (!settings) {
           return false;
@@ -124,8 +140,20 @@
 
       });
 
-    }
+    },
 
+    // ------------------------------------
+
+    callbacks : {
+      change     : function () {},
+      focus      : function () {},
+      blur       : function () {},
+      mousedown  : function () {},
+      mouseup    : function () {},
+      mouseenter : function () {},
+      mouseleave : function () {},
+      keyup      : function () {}
+    }
   };
 
   // ----------------------------------

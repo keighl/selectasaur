@@ -7,7 +7,7 @@ Selectasaur lets you have customized `select` targets. It will wrap select tags 
 ### Javascript
 
 ```js
-$('select').selectasaur();
+$('select').selectasaur({});
 ```
 
 ### HTML
@@ -68,3 +68,18 @@ $('select').selectasaur();
 
 * init      - `$("select").selectasaur(OPTIONS)`
 * destroy   - `$("select").selectasaur('destroy')`
+
+## Callbacks
+
+```js
+$('select').selectasaur({
+  change     : function () {},
+  focus      : function () {},
+  blur       : function () {},
+  mousedown  : function () {},
+  mouseup    : function () {},
+  mouseenter : function () {},
+  mouseleave : function () {},
+  keyup      : function () {}
+});
+```

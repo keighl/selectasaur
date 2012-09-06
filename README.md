@@ -1,4 +1,4 @@
-# Scrollface
+# Selectasaur
 
 Selectasaur lets you have customized `select` targets. It will wrap select tags up in stylable boxes while retaining native popovers. Heavily inspired by [Uniform.js](https://github.com/pixelmatrix/uniform).
 

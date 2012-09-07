@@ -38,7 +38,8 @@
               mouseup              : methods.callbacks.mouseup,
               mouseenter           : methods.callbacks.mouseenter,
               mouseleave           : methods.callbacks.mouseleave,
-              keyup                : methods.callbacks.keyup
+              keyup                : methods.callbacks.keyup,
+              click                : methods.callbacks.click
             },
             wrapper  = $('<div />').addClass(settings.wrapper_class),
             label    = $('<span />').addClass(settings.label_class);
@@ -152,7 +153,8 @@
       mouseup    : function () {},
       mouseenter : function () {},
       mouseleave : function () {},
-      keyup      : function () {}
+      keyup      : function () {},
+      click      : function () {}
     }
   };
 

@@ -40,13 +40,14 @@
               mouseleave           : methods.callbacks.mouseleave,
               keyup                : methods.callbacks.keyup,
               click                : methods.callbacks.click
-            },
-            wrapper  = $('<div />').addClass(settings.wrapper_class),
-            label    = $('<span />').addClass(settings.label_class);
+            };
 
         if (options) {
           $.extend(settings, options);
         }
+
+        var wrapper  = $('<div />').addClass(settings.wrapper_class),
+            label    = $('<span />').addClass(settings.label_class);
 
         /*
         * Store all this stuff as data

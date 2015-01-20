@@ -47,22 +47,25 @@ $('select').selectasaur({});
   white-space: nowrap;
 }
 
-.selectasaur-wrapper-active {}
+.selectasaur-wrapper.active {}
 
-.selectasaur-wrapper-hover {}
+.selectasaur-wrapper.hover {}
 
-.selectasaur-wrapper-focus {}
+.selectasaur-wrapper.focus {}
+
+.selectasaur-wrapper.selected {}
 
 ```
 
 ## Init Options
 
-* enabled_class        - `selectasaur-enabled`
-* wrapper_class        - `selectasaur-wrapper`
-* wrapper_active_class - `selectasaur-wrapper-active`
-* wrapper_focus_class  - `selectasaur-wrapper-focus`
-* wrapper_hover_class  - `selectasaur-wrapper-hover`
-* label_class          - `selectasaur-label`
+* enabled_class          - `selectasaur-enabled`
+* wrapper_class          - `selectasaur-wrapper`
+* wrapper_active_class   - `active`
+* wrapper_focus_class    - `focus`
+* wrapper_hover_class    - `hover`
+* wrapper_selected_class - `selected`
+* label_class            - `selectasaur-label`
 
 ## Methods
 

@@ -24,7 +24,7 @@ $('select').selectasaur({});
 ### CSS
 
 ```css
-.selectasaur-enabled {
+.ss-enabled {
   position: absolute;
   opacity: 0;
   height: 25px; /* adjust manually for best hit state */
@@ -34,12 +34,12 @@ $('select').selectasaur({});
   cursor:pointer;
 }
 
-.selectasaur-wrapper {
+.ss-wrapper {
   position: relative;
   overflow: hidden;
 }
 
-.selectasaur-label {
+.ss-label {
   display: block;
   float: left;
   overflow: hidden;
@@ -47,25 +47,25 @@ $('select').selectasaur({});
   white-space: nowrap;
 }
 
-.selectasaur-wrapper.active {}
+.ss-active {}
 
-.selectasaur-wrapper.hover {}
+.ss-hover {}
 
-.selectasaur-wrapper.focus {}
+.ss-focus {}
 
-.selectasaur-wrapper.selected {}
+.ss-selected {}
 
 ```
 
 ## Init Options
 
-* enabled_class          - `selectasaur-enabled`
-* wrapper_class          - `selectasaur-wrapper`
-* wrapper_active_class   - `active`
-* wrapper_focus_class    - `focus`
-* wrapper_hover_class    - `hover`
-* wrapper_selected_class - `selected`
-* label_class            - `selectasaur-label`
+* enabled_class          - `ss-enabled`
+* wrapper_class          - `ss-wrapper`
+* wrapper_active_class   - `ss-active`
+* wrapper_focus_class    - `ss-focus`
+* wrapper_hover_class    - `ss-hover`
+* wrapper_selected_class - `ss-selected`
+* label_class            - `ss-label`
 
 ## Methods
 

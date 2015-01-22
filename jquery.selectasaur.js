@@ -60,7 +60,7 @@
 
         // Set the selected class if the default 
         // option is not selected.
-        if (selected[0] !== $this.find("option:first")[0]) {
+        if (selected.val() != '') {
           wrapper.addClass(settings.wrapper_selected_class);
         }
 
@@ -75,11 +75,16 @@
 
         $this.bind({
           "change.selectasaur": function() {
-            label.text($this.find(":selected").html());
+            var new_selection = $this.find(":selected");
+            label.text(new_selection.html());
             wrapper.removeClass(settings.wrapper_focus_class);
             wrapper.removeClass(settings.wrapper_hover_class);
             wrapper.removeClass(settings.wrapper_active_class);
-            wrapper.addClass(settings.wrapper_selected_class);
+            if (new_selection.val() == '') {
+              wrapper.removeClass(settings.wrapper_selected_class);
+            } else {
+              wrapper.addClass(settings.wrapper_selected_class);
+            }
             settings.change.call($this);
           },
           "focus.selectasaur": function() {

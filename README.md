@@ -14,7 +14,7 @@ $('select').selectasaur({});
 
 ```html
 <select>
-  <option>Select a dinosaur...</option>
+  <option value="">Select a dinosaur...</option>
   <option>Breviceratops</option>
   <option>Charonosaurus</option>
   <option>Liaoceratops</option>

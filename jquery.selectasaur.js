@@ -25,21 +25,22 @@
         var $this    = $(this),
             selected = $this.find(":selected:first"),
             settings = {
-              enabled_class        : "selectasaur-enabled",
-              wrapper_class        : "selectasaur-wrapper",
-              wrapper_active_class : "selectasaur-wrapper-active",
-              wrapper_focus_class  : "selectasaur-wrapper-focus",
-              wrapper_hover_class  : "selectasaur-wrapper-hover",
-              label_class          : "selectasaur-label",
-              change               : methods.callbacks.change,
-              focus                : methods.callbacks.focus,
-              blur                 : methods.callbacks.blur,
-              mousedown            : methods.callbacks.mousedown,
-              mouseup              : methods.callbacks.mouseup,
-              mouseenter           : methods.callbacks.mouseenter,
-              mouseleave           : methods.callbacks.mouseleave,
-              keyup                : methods.callbacks.keyup,
-              click                : methods.callbacks.click
+              enabled_class          : "ss-enabled",
+              wrapper_class          : "ss-wrapper",
+              wrapper_active_class   : "ss-active",
+              wrapper_focus_class    : "ss-focus",
+              wrapper_hover_class    : "ss-hover",
+              wrapper_selected_class : "ss-selected",
+              label_class            : "ss-label",
+              change                 : methods.callbacks.change,
+              focus                  : methods.callbacks.focus,
+              blur                   : methods.callbacks.blur,
+              mousedown              : methods.callbacks.mousedown,
+              mouseup                : methods.callbacks.mouseup,
+              mouseenter             : methods.callbacks.mouseenter,
+              mouseleave             : methods.callbacks.mouseleave,
+              keyup                  : methods.callbacks.keyup,
+              click                  : methods.callbacks.click
             };
 
         if (options) {
@@ -57,8 +58,10 @@
 
         $this.addClass(settings.enabled_class);
 
-        if (selected.length === 0) {
-          selected = $this.find("option:first");
+        // Set the selected class if the default 
+        // option is not selected.
+        if (selected.val() != '') {
+          wrapper.addClass(settings.wrapper_selected_class);
         }
 
         label.html(selected.html());
@@ -72,10 +75,16 @@
 
         $this.bind({
           "change.selectasaur": function() {
-            label.text($this.find(":selected").html());
+            var new_selection = $this.find(":selected");
+            label.text(new_selection.html());
             wrapper.removeClass(settings.wrapper_focus_class);
             wrapper.removeClass(settings.wrapper_hover_class);
             wrapper.removeClass(settings.wrapper_active_class);
+            if (new_selection.val() == '') {
+              wrapper.removeClass(settings.wrapper_selected_class);
+            } else {
+              wrapper.addClass(settings.wrapper_selected_class);
+            }
             settings.change.call($this);
           },
           "focus.selectasaur": function() {

@@ -121,21 +121,21 @@ p {
   padding:50px 0;
 }
 
-.selectasaur-wrapper {
+.ss-wrapper {
+  @include background(linear-gradient(top, #fff, #f7f7f7));
+  @include border-radius(10px);
+  @include single-box-shadow(0, 0, 2px, 4px, rgba(0, 0, 0, 0.2), false);
   position: relative;
   overflow: hidden;
   width:400px;
   padding:20px;
   margin:0 auto;
   background-color:#f7f7f7;
-  @include background(linear-gradient(top, #fff, #f7f7f7));
-  @include border-radius(10px);
-  @include single-box-shadow(rgba(0, 0, 0, 0.2), 0, 0, 2px, 4px, false);
   cursor:pointer;
   border:3px solid #ccc;
 }
 
-.selectasaur-enabled {
+.ss-enabled {
   position: absolute;
   left:0;
   top:0;
@@ -147,7 +147,7 @@ p {
   cursor:pointer;
 }
 
-.selectasaur-label {
+.ss-label {
   display: block;
   float: left;
   overflow: hidden;
@@ -164,17 +164,17 @@ p {
   background-repeat:no-repeat;
 }
 
-.selectasaur-wrapper-active {
+.ss-wrapper.active {
   @include background(linear-gradient(top, #f7f7f7, #f7f7f7));
 }
 
-.selectasaur-wrapper-hover {
-  .selectasaur-label {
-    color:#000;
-  }
+.ss-wrapper.hover .ss-label {
+  color:#000;
 }
 
-.selectasaur-wrapper-focus {}
+.ss-wrapper.selected .ss-label {}
+
+.ss-wrapper.focus {}
 
 pre.prettyprint {
 
